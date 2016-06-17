@@ -1,0 +1,6 @@
+<cfquery name="qfiles" dataSource="FMP_WIPM" username="Admin" password="">
+SELECT IDfk, GetAs(One,'PDF '), GetAs(Two,'PDF '), GetAs(Three,'PDF ') FROM Container
+Where IDfk='url.ID' 
+</cfquery>
+
+<cfcontent variable="#toBinary(qfiles.One)#" type="application/pdf" />
